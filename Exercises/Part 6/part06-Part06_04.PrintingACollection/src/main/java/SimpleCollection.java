@@ -1,0 +1,42 @@
+
+import java.util.ArrayList;
+
+public class SimpleCollection {
+
+    private String name;
+    private ArrayList<String> elements;
+
+    public SimpleCollection(String name) {
+        this.name = name;
+        this.elements = new ArrayList<>();
+    }
+
+    public void add(String element) {
+        this.elements.add(element);
+    }
+
+    public ArrayList<String> getElements() {
+        return this.elements;
+    }
+    
+    //public String getName() {
+        //return this.name;
+    //I created this method as well as everything below}
+    
+    @Override public String toString() {
+        String elementsInList = "";
+        
+        for (String element: elements) {
+            elementsInList = elementsInList + element.getName() + "\n";
+        }
+        if (elements.isEmpty()) {
+            return "The collection alphabet is empty.";
+        }
+        if (elements.size() == 1) {
+            return "The collection alphabet has 1 element:\n" + elementsInList;
+            
+        }
+        return "The collection alphabet has " + elements.size() + " elements:" + "\n" + elementsInList;
+    }
+    
+}
