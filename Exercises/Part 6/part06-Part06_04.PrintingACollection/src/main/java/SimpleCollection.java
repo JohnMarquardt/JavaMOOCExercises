@@ -19,24 +19,23 @@ public class SimpleCollection {
         return this.elements;
     }
     
-    //public String getName() {
-        //return this.name;
-    //I created this method as well as everything below}
+    public String getName() {
+        return this.name;
+    }
     
     @Override public String toString() {
         String elementsInList = "";
         
         for (String element: elements) {
-            elementsInList = elementsInList + element.getName() + "\n";
+            elementsInList = elementsInList + "\n" + element;
         }
         if (elements.isEmpty()) {
-            return "The collection alphabet is empty.";
+            return "The collection " + this.getName() + " is empty.";
         }
         if (elements.size() == 1) {
-            return "The collection alphabet has 1 element:\n" + elementsInList;
+            return "The collection " + this.getName() + " has 1 element:" + elementsInList;
             
         }
-        return "The collection alphabet has " + elements.size() + " elements:" + "\n" + elementsInList;
+        return "The collection " + this.getName() + " has " + elements.size() + " elements:" + elementsInList;
     }
-    
 }
