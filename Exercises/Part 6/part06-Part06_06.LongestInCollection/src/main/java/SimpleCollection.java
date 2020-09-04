@@ -23,14 +23,17 @@ public class SimpleCollection {
         if (elements.isEmpty()) {
             return null;
         }
-        String longest = this.elements.get(0);
+        String longestString = this.elements.get(0);
+        int longest = this.elements.get(0).length();
         
-        for (String element: elements) {
-            if (element.name.length() < longest) {
-                longest = element;
+        for (String i: elements) {
+            int index = elements.indexOf(i);
+            if (longest < this.elements.get(index).length()) {
+                longest = this.elements.get(index).length();
+                longestString = this.elements.get(index);
             }
-            return longest;
         }
+        return longestString;
         
     }
 
