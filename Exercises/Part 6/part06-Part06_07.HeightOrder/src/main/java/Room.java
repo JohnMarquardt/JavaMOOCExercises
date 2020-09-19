@@ -1,26 +1,61 @@
 import java.util.ArrayList;
 
 public class Room {
-    private ArrayList<Room> Person;
+    private ArrayList<Person> person;
     
     public Room() {
-        this.Person = Person;
+        this.person = new ArrayList<Person>();
     }
     
     public void add(Person person) {
-        this.add(person);
+        this.person.add(person);
     }
     
     public boolean isEmpty() {
-        if(this.ArrayList[1] == null) {
+        if (this.person.isEmpty()) {
             return true;
         }
         return false;
     }
     
     public ArrayList<Person> getPersons() {
-        for(person i: Person) {
-            System.out.println(person);
-        }
+        return person;
     }
+    
+    public Person shortest() {
+        if (this.person.isEmpty()) {
+            return null;
+        }
+        Person shortestPerson = person.get(0);
+        int shortest = person.get(0).getHeight();
+        
+        for (Person a: person) {
+            int currentHeight = a.getHeight();
+            if (currentHeight < shortest) {
+                shortest = currentHeight;
+                shortestPerson = a;
+            }
+        }
+        return shortestPerson;
+    }
+    
+    public Person take() {
+        if (this.person.isEmpty()) {
+            return null;
+        }
+        Person shortestPerson = person.get(0);
+        int shortest = person.get(0).getHeight();
+        
+        for (Person a: person) {
+            int currentHeight = a.getHeight();
+            if (currentHeight < shortest) {
+                shortest = currentHeight;
+                shortestPerson = a;
+                
+            }
+        }
+        person.remove(shortestPerson);
+        return shortestPerson;
+    }
+    
 }
